@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace Sutter_BMICalculator
 { 
-    class Info
+    class Display
     {
         public void DisplayInfo(string assignment)
         {
