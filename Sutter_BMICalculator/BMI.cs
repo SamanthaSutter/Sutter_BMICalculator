@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sutter_BMICalculator
 {
+    
     class BMI
     {
         //Declaring variables height, weight and bmi
@@ -34,10 +35,28 @@ namespace Sutter_BMICalculator
             set { bodyMassIndex = value; }
         }
 
-        public double CalculateBMI(int height, int weight)
+        //Calculating users bmi
+        public double CalculateBMI(double height, double weight)
         {
-            bodyMassIndex = (weight / (height * height)) * 703;
+            double num = 703;
+            bodyMassIndex = (weight / (Math.Pow(height , 2))) * num;
             return bodyMassIndex;
+        }
+
+        //Determining users weight status based on their bmi
+        public string ObtainWeightStatus(double bmi)
+        {
+            string weightStatus = "Normal";
+
+            if (bmi < 18.5)
+                weightStatus = "Underweight";
+            if (bmi > 24.9 && bmi < 29.9)
+                weightStatus = "Overweight";
+            if (bmi > 30)
+                weightStatus = "Obese";
+
+            return weightStatus;
+
         }
     }
 }

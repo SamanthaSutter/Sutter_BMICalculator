@@ -10,8 +10,8 @@ namespace Sutter_BMICalculator
     class DMIUI
     {
         //Declaring height and weight variables
-        private int height;
-        private int weight;
+        private double height;
+        private double weight;
 
         //Displaying application intro
         public void Introduction()
@@ -21,33 +21,33 @@ namespace Sutter_BMICalculator
         }
 
         //Getting user input for height
-        public int InputHeight()
+        public double InputHeight()
         {
             
             Write("\nPlease enter your height in inches: ");
             string h = ReadLine();
-            height = int.Parse(h);
+            height = double.Parse(h);
 
             return height;
         }
 
         //Getting user input for weight
-        public int InputWeight()
+        public double InputWeight()
         {
             Write("\nPlease enter your weight in pounds: ");
             string w = ReadLine();
-            weight = int.Parse(w);
+            weight = double.Parse(w);
 
             return weight;
         }
 
         //Displaying height, weight & BMI to user
-        public void DisplayBMI(int height, int weight, double bmi)
+        public void DisplayBMI(double height, double weight, double bmi, string status)
         {
-            WriteLine("For your height of " + height + " and your weight of " +
+            WriteLine("\n\nFor your height of " + height + " inches and your weight of " +
                 weight + " pounds,\nyour BMI is " + bmi + " which gives you a weight " +
-                "status of " + ".");
+                "status of " + status + ".\n\n");
+            ReadKey();
         }
-
     }
 }

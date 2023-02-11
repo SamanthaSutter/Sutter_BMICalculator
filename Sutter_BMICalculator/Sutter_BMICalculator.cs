@@ -6,11 +6,12 @@ namespace Sutter_BMICalculator
     {
         static void Main(string[] args)
         {
-            //Declaring assignment variable
+            //Declaring variables
             string assignment = "BMI Assignment 3";
-            int h;
-            int w;
+            double h;
+            double w;
             double bmi;
+            string status;
             
             //Creating info object
             Display info = new Display();
@@ -21,13 +22,22 @@ namespace Sutter_BMICalculator
 
             //Passing assignment info to info object and displaying
             info.DisplayInfo(assignment);
+
             //Displaying introduction to application
             display.Introduction();
-            h = display.InputHeight();
-            w = display.InputWeight();
-            bmi = bodyMassIndex.CalculateBMI(h, w);
 
-            display.DisplayBMI(h, w, bmi);
+            //Setting user input for height
+            h = display.InputHeight();
+            //Setting user input for weight
+            w = display.InputWeight();
+            //Calculating users bmi 
+            bmi = bodyMassIndex.CalculateBMI(h, w);
+            //Determining users weight status
+            status = bodyMassIndex.ObtainWeightStatus(bmi);
+
+            //Displaying the users height, weight, bmi and weight status
+            display.DisplayBMI(h, w, bmi, status);
+            
             
 
 
